@@ -29,3 +29,162 @@ a {
 ul {
   list-style: none;
 }
+
+:root {
+  --color-primary: #B8860B;
+  --color-bg: #ffffff;
+  --color-bg-gray: #f5f5f5;
+  --color-text: #333333;
+  --color-text-light: #777777;
+  --max-width: 1140px;
+}
+
+/* ============
+   Header / Nav
+   ============ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-primary);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.nav__logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+
+.nav__list {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav__link {
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+}
+
+/* ============
+   Hero
+   ============ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding-top: 4rem;
+}
+
+.hero__inner {
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero__catch {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.hero__sub {
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+/* ============
+   Section 共通
+   ============ */
+.section {
+  padding: 6rem 2rem;
+}
+
+.about,
+.works,
+.skills,
+.contact {
+  padding: 6rem 2rem;
+}
+
+.about,
+.skills {
+  background: var(--color-bg-gray);
+}
+
+.works,
+.contact {
+  background: var(--color-bg);
+}
+
+.about__inner,
+.works__inner,
+.skills__inner,
+.contact__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about__title,
+.works__title,
+.skills__title,
+.contact__title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block;
+}
+
+
+/* ============
+   Footer
+   ============ */
+.footer {
+  background: var(--color-text);
+  color: var(--color-bg);
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer__copy {
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+}
+
