@@ -1,13 +1,62 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
+    <title>Portfolio | Your Name</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__logo">Your Name</div>
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+          <li class="nav__item"><a class="nav__link" href="#works">Works</a></li>
+          <li class="nav__item"><a class="nav__link" href="#skills">Skills</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero__inner">
+          <p class="hero__catch">一人で考えて、一人で作れる。</p>
+          <h1 class="hero__title">Your Name</h1>
+          <p class="hero__sub">Web Designer / Front-end Developer</p>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about__inner">
+          <h2 class="about__title">About</h2>
+        </div>
+      </section>
+
+      <section class="works" id="works">
+        <div class="works__inner">
+          <h2 class="works__title">Works</h2>
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <div class="skills__inner">
+          <h2 class="skills__title">Skills</h2>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact__inner">
+          <h2 class="contact__title">Contact</h2>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copy">&copy; 2026 Your Name</p>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
