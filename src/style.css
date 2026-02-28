@@ -268,3 +268,53 @@ ul {
   border-radius: 2px;
   letter-spacing: 0.05em;
 }
+
+/* ============
+   Skills
+   ============ */
+.skills__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.skill-group {
+  background: var(--color-bg);
+  padding: 2rem;
+  border-radius: 4px;
+  border-top: 3px solid var(--color-primary);
+}
+
+.skill-group__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.skill-group__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-group__item {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.skill-group__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
