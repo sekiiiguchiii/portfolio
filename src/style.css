@@ -188,3 +188,23 @@ ul {
   color: var(--color-text-light);
 }
 
+/* ============
+   About
+   ============ */
+.about__content {
+  max-width: 720px;
+}
+
+.about__catch {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.about__text {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.9;
+}
