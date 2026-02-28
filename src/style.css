@@ -86,6 +86,13 @@ ul {
 }
 
 /* ============
+   Hamburger
+   ============ */
+.nav__hamburger {
+  display: none;
+}
+
+/* ============
    Hero
    ============ */
 .hero {
@@ -384,4 +391,82 @@ ul {
 
 .contact-form__btn:hover {
   opacity: 0.8;
+}
+
+
+/* ============
+   Responsive
+   ============ */
+@media (max-width: 768px) {
+  .nav__list {
+    display: none;
+  }
+
+   .nav__hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .nav__hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .nav__hamburger.is-open .nav__hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav__hamburger.is-open .nav__hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__hamburger.is-open .nav__hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav__list.is-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg);
+    padding: 1rem 2rem 2rem;
+    border-bottom: 2px solid var(--color-primary);
+    gap: 1.5rem;
+  }
+
+  .hero__catch {
+    font-size: 0.875rem;
+  }
+
+  .works__list {
+    grid-template-columns: 1fr;
+  }
+
+  .skills__list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form__btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills__list {
+    grid-template-columns: 1fr;
+  }
 }

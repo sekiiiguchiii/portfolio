@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <header class="header">
-      <nav class="nav">
-        <div class="nav__logo">Your Name</div>
-        <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
-          <li class="nav__item"><a class="nav__link" href="#works">Works</a></li>
-          <li class="nav__item"><a class="nav__link" href="#skills">Skills</a></li>
-          <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+<header class="header">
+  <nav class="nav">
+    <div class="nav__logo">Your Name</div>
+    <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+      <span class="nav__hamburger-line"></span>
+      <span class="nav__hamburger-line"></span>
+      <span class="nav__hamburger-line"></span>
+    </button>
+    <ul class="nav__list" id="navList">
+      <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+      <li class="nav__item"><a class="nav__link" href="#works">Works</a></li>
+      <li class="nav__item"><a class="nav__link" href="#skills">Skills</a></li>
+      <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
     <main>
       <section class="hero" id="hero">
