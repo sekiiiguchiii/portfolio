@@ -195,11 +195,27 @@
   </div>
 </section>
 
-      <section class="contact" id="contact">
-        <div class="contact__inner">
-          <h2 class="contact__title">Contact</h2>
-        </div>
-      </section>
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <h2 class="contact__title">Contact</h2>
+    <p class="contact__text">お仕事のご依頼・ご相談はこちらからお気軽にどうぞ。</p>
+    <form class="contact-form" action="https://formspree.io/f/mbdabqjn" method="POST">
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="name">お名前</label>
+        <input class="contact-form__input" type="text" id="name" name="name" required placeholder="山田 太郎">
+      </div>
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="email">メールアドレス</label>
+        <input class="contact-form__input" type="email" id="email" name="email" required placeholder="example@email.com">
+      </div>
+      <div class="contact-form__group">
+        <label class="contact-form__label" for="message">メッセージ</label>
+        <textarea class="contact-form__textarea" id="message" name="message" required placeholder="メッセージをご入力ください"></textarea>
+      </div>
+      <button class="contact-form__btn" type="submit">送信する</button>
+    </form>
+  </div>
+</section>
     </main>
 
 
