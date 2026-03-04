@@ -1,4 +1,87 @@
 import './style.css'
+import { tsParticles } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
+
+(async () => {
+  await loadSlim(tsParticles);
+
+  await tsParticles.load({
+    id: "tsparticles",
+    options: {
+      fpsLimit: 100,
+      detectRetina: false, // trueからfalseに変更して負荷を軽減
+      particles: {
+        number: {
+          value: 20, // 数を絞ることで「大きな円」が際立ちます
+          density: { enable: true, area: 800 }
+        },
+        color: {
+          // スクリーンショットに近い暖色・寒色のミックス
+       //   value: [ "#e6b4ff", "#a7ffea", "#e2ffa9", "#ffeabc"]
+         // value: [ "#ffffff",  "#ffd260","#e2ffa9", "#a7ffea","#edcaff"]
+         //pop value: ["#5bc0eb","#fde74c","#9bc53d","#e55934","#fa7921"]
+         value: [ "#ffffff",  "#E8E8E8","#c5c5c5", "#9b9b9b","#d0d0d0"]
+        },
+        shape: {
+          type: "circle" // 円に限定
+          //type: ["circle", "square", "triangle", "polygon"], // 丸・四角・三角・多角形
+        },
+        opacity: {
+         value: 0.15, // 重なりが見えるように半透明に
+        },
+        size: {
+          value: { min: 600, max: 700 }, // かなり大きく設定するのがコツです
+        },
+        move: {
+          enable: true,
+          speed: 4, // ゆっくり動かす
+          direction: "top", // 上方向へ流す
+          random: false,  // 直線的すぎる動きを抑える
+          straight: false,
+          // outModes: "out", // 画面外に出たら消えて下から再登場
+
+          enable: true,
+  outModes: "out",
+  vibrate: false,     // 余計な計算をオフにする
+        }
+      },
+      interactivity: {
+        detectsOn: "canvas",
+        events: {
+          resize: true
+        }
+      },
+      background: {
+color: "#ffffff" // 背景は白
+      },
+      responsive: [
+      {
+        maxWidth: 768, // 768px以下のデバイス（スマホ・タブレット）に適用
+        options: {
+          particles: {
+            size: {
+              value: { min: 350, max: 400 } // スマホではサイズを小さくする
+            },
+          number: {
+              value: 40, // 数も少し減らすとパフォーマンスが安定します
+            density: {
+            enable: true,
+            area: 400 // areaを小さく（例: 800→400）すると、狭い範囲に密集します
+          }
+            }
+          }
+
+
+        }
+      }
+    ],
+      fullScreen: {
+        enable: true,
+        zIdex: -1
+      }
+    }
+  });
+})();
 
 // ============
 // ハンバーガーメニュー
@@ -17,6 +100,21 @@ navLinks.forEach(link => {
     hamburger.classList.remove('is-open')
     navList.classList.remove('is-open')
   })
+})
+
+// リサイズ中はtransitionを無効化
+let resizeTimer = null
+window.addEventListener('resize', () => {
+  document.body.classList.add('is-resizing')
+  clearTimeout(resizeTimer)
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove('is-resizing')
+  }, 200)
+
+  if (window.innerWidth > 768) {
+    hamburger.classList.remove('is-open')
+    navList.classList.remove('is-open')
+  }
 })
 
 // ============
@@ -91,7 +189,7 @@ lightbox.className = 'lightbox'
 lightbox.innerHTML = `
   <div class="lightbox__overlay"></div>
   <div class="lightbox__content">
-    <button class="lightbox__close" aria-label="閉じる">&times;</button>
+    <button class="lightbox__close" aria-label="閉じる">&#x2715;</button>
     <div class="lightbox__body"></div>
   </div>
 `
@@ -150,7 +248,9 @@ function openLightbox(card) {
     lightboxBody.innerHTML = `<img src="${img.src}" alt="${img.alt}">`
   }
 
-  lightbox.classList.add('is-open')
+  requestAnimationFrame(() => {
+    lightbox.classList.add('is-open')
+  })
   document.body.style.overflow = 'hidden'
 }
 
@@ -158,17 +258,19 @@ function closeLightbox() {
   clearInterval(lbTimerRef)
   lbTimerRef = null
   lightbox.classList.remove('is-open')
-  lightboxBody.innerHTML = ''
+  setTimeout(() => {
+    lightboxBody.innerHTML = ''
+  }, 300)
   document.body.style.overflow = ''
 }
 
 document.querySelectorAll('.work-card').forEach(card => {
   card.addEventListener('click', () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 663) {
       openLightbox(card)
     }
   })
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 663) {
     card.style.cursor = 'pointer'
   }
 })

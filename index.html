@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+  name="description" content="This is a portfolio site created by Japanese web designer Sachiyo Sekiguchi for recruiters.">
     <title>Portfolio | SEKIGUCHI PORTFOLIO</title>
+    <link rel="shortcut icon" href="/images/favicon.svg">
     <link rel="stylesheet" href="/src/style.css" />
+     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
 <header class="header">
   <nav class="nav">
-    <div class="nav__logo">SEKIGUCHI PORTFOLIO</div>
+    <div class="nav__logo"><a href="#top">SEKIGUCHI PORTFOLIO</a></div>
     <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
       <span class="nav__hamburger-line"></span>
       <span class="nav__hamburger-line"></span>
@@ -37,8 +41,18 @@
   <div class="about__inner">
     <h2 class="about__title">About</h2>
     <div class="about__content fade-in">
-      <p class="about__catch">Webデザイン20年。デザインから実装まで、一人で完結できます。</p>
-      <p class="about__text">出版・メディア・EC・化粧品など、業種を問わずWebに関わるあらゆる業務を経験してきました。デザイン、コーディング、ディレクション、素材制作、コピーライティングまで、必要なことは何でもやる姿勢が強みです。現在はAIを積極的に活用し、一人でできる質と速度をさらに高めています。</p>
+      <div class="about__body">
+        <div class="about__text-area">
+          <p class="about__catch">Webデザイン20年。デザインから実装まで、一人で完結できます。</p>
+          <p class="about__text">出版・メディア・EC・化粧品など、業種を問わずWebに関わるあらゆる業務を経験してきました。デザイン、コーディング、ディレクション、素材制作、コピーライティングまで、必要なことは何でもやる姿勢が強みです。現在はAIを積極的に活用し、一人でできる質と速度をさらに高めています。</p>
+        </div>
+        <div class="about__cam" title="LIVE風イメージ">
+          <video class="about__video" autoplay muted loop playsinline poster="/images/liveimg.webp" loading="lazy">
+            <source src="/images/work.mp4" type="video/mp4">
+          </video>
+          <p class="about__cam-label">● LIVE</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -53,13 +67,14 @@
   <img src="/images/news01.webp" alt="サービスガイド" loading="lazy">
 </div>
         <div class="work-card__body">
-          <h3 class="work-card__title">[新聞社]サービスガイド</h3>
+          <h3 class="work-card__title"><span class="work-card__badge">新聞社</span>サービスガイド</h3>
           <p class="work-card__text">大手新聞社デジタル版のサービス案内ページ。デザインからコーディングまで一貫して担当。</p>
           <ul class="work-card__tags">
             <li class="work-card__tag">HTML/CSS</li>
             <li class="work-card__tag">JavaScript</li>
+            <li class="work-card__tag">PHP</li>
             <li class="work-card__tag">Design</li>
-                <li class="work-card__tag">PHP</li>
+
           </ul>
         </div>
       </article>
@@ -70,7 +85,7 @@
   <img src="/images/news02.webp" alt="アプリ紹介LP" loading="lazy">
 </div>
         <div class="work-card__body">
-          <h3 class="work-card__title">[新聞社]アプリ紹介LP</h3>
+          <h3 class="work-card__title"><span class="work-card__badge">新聞社</span>アプリ紹介LP</h3>
           <p class="work-card__text">大手新聞社公式アプリの機能を紹介するランディングページ。2つのアプリを1ページで分かりやすく見せる構成を設計。</p>
           <ul class="work-card__tags">
             <li class="work-card__tag">HTML/CSS</li>
@@ -83,11 +98,11 @@
       <article class="work-card">
 <!-- ④ -->
 <div class="work-card__img">
-  <img src="/images/news04.webp" alt="新規顧客獲得キャンペーン" loading="lazy">
+  <img src="/images/news04.webp" alt="顧客獲得LP" loading="lazy">
 </div>
         <div class="work-card__body">
-          <h3 class="work-card__title">[新聞社]新規顧客獲得キャンペーン</h3>
-          <p class="work-card__text">大手新聞社デジタル版の新規購読者向けキャンペーンLP。訴求力のあるビジュアルと明確なCTAを設計。</p>
+          <h3 class="work-card__title"><span class="work-card__badge">新聞社</span>顧客獲得キャンペーンLP</h3>
+          <p class="work-card__text">大手新聞社デジタル版の新規顧客獲得キャンペーンLP。訴求力のあるビジュアルと明確なCTAを設計。</p>
           <ul class="work-card__tags">
             <li class="work-card__tag">HTML/CSS</li>
             <li class="work-card__tag">JavaScript</li>
@@ -103,7 +118,7 @@
 </div>
 
                 <div class="work-card__body">
-          <h3 class="work-card__title">[新聞社]法人契約ページ</h3>
+          <h3 class="work-card__title"><span class="work-card__badge">新聞社</span>法人契約ページ</h3>
           <p class="work-card__text">大手新聞社デジタル版の法人向けサービス案内ページ。情報量が多い内容を整理しわかりやすく設計。</p>
           <ul class="work-card__tags">
             <li class="work-card__tag">HTML/CSS</li>
@@ -115,11 +130,11 @@
 
       <article class="work-card">
 <div class="work-card__img work-card__img--slider" id="mmSlider">
-  <img src="/images/mm01.png" alt="HTMLメール 1" class="slider__img is-active">
-  <img src="/images/mm02.png" alt="HTMLメール 2" class="slider__img">
-  <img src="/images/mm03.png" alt="HTMLメール 3" class="slider__img">
-  <img src="/images/mm04.png" alt="HTMLメール 4" class="slider__img">
-  <img src="/images/mm05.png" alt="HTMLメール 5" class="slider__img">
+  <img src="/images/mm01.webp" alt="HTMLメール 1" class="slider__img is-active">
+  <img src="/images/mm02.webp" alt="HTMLメール 2" class="slider__img">
+  <img src="/images/mm03.webp" alt="HTMLメール 3" class="slider__img">
+  <img src="/images/mm04.webp" alt="HTMLメール 4" class="slider__img">
+  <img src="/images/mm05.webp" alt="HTMLメール 5" class="slider__img">
   <div class="slider__dots" id="mmDots">
     <button class="slider__dot is-active" data-index="0" aria-label="1枚目"></button>
     <button class="slider__dot" data-index="1" aria-label="2枚目"></button>
@@ -129,11 +144,12 @@
   </div>
 </div>
         <div class="work-card__body">
-          <h3 class="work-card__title">[アパレル]顧客向けメールマガジン</h3>
-          <p class="work-card__text">ストール専門アパレルブランドの週次メールマガジンを継続的にデザイン・制作。ブランドのトンマナを維持しながら毎週異なるビジュアルを展開。</p>
+          <h3 class="work-card__title"><span class="work-card__badge">アパレル</span>メールマガジン</h3>
+          <p class="work-card__text">ストール専門アパレルブランドの週次メールマガジンを継続的にデザイン・配信。ブランドのトンマナを維持しながら毎週異なるビジュアルを展開。</p>
           <ul class="work-card__tags">
-            <li class="work-card__tag">HTML</li>
+
             <li class="work-card__tag">Design</li>
+            <li class="work-card__tag">HTML</li>
             <li class="work-card__tag">Email</li>
           </ul>
         </div>
@@ -145,7 +161,7 @@
   <img src="/images/other01.jpg" alt="三つ折りパンフレット" loading="lazy">
 </div>
         <div class="work-card__body">
-          <h3 class="work-card__title">[コスメ]三つ折りパンフレット</h3>
+          <h3 class="work-card__title"><span class="work-card__badge">コスメ</span>三つ折りパンフレット</h3>
           <p class="work-card__text">化粧品会社の美容ドリンク訴求パンフレット。Webと印刷物両方のデザインを担当。</p>
           <ul class="work-card__tags">
             <li class="work-card__tag">Design</li>
@@ -160,7 +176,7 @@
   <img src="/images/other02.jpg" alt="バナー（化粧品）" loading="lazy">
 </div>
         <div class="work-card__body">
-          <h3 class="work-card__title">[コスメ]バナー</h3>
+          <h3 class="work-card__title"><span class="work-card__badge">コスメ</span>バナー</h3>
           <p class="work-card__text">化粧品会社の自社製品バナー。商品の魅力を引き出すビジュアルとキャッチコピーで訴求。</p>
           <ul class="work-card__tags">
             <li class="work-card__tag">Design</li>
@@ -175,7 +191,7 @@
   <img src="/images/other03.jpg" alt="バナー（出版社）" loading="lazy">
 </div>
         <div class="work-card__body">
-          <h3 class="work-card__title">[出版社]バナー</h3>
+          <h3 class="work-card__title"><span class="work-card__badge">出版社</span>バナー</h3>
           <p class="work-card__text">大手出版社サイト掲載用のWebバナー制作。新書・漫画誌など多数のタイトルに対応したビジュアルを制作。</p>
           <ul class="work-card__tags">
             <li class="work-card__tag">Design</li>
@@ -264,7 +280,5 @@
     <footer class="footer">
       <p class="footer__copy">&copy; 2026 SEKIGUCHI PORTFOLIO</p>
     </footer>
-
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
