@@ -10,7 +10,7 @@ z-index:1;
    --color-primary: #B8860B;
  /* --color-primary: #333333; */
   --color-bg: #ffffff;
-  /* --color-bg-opacity: rgba(255, 255, 255, .4); */
+  --color-bg-opacity: rgba(255, 255, 255, .4);
   /* --color-bg-gray: #e3e3e3; */
     --color-bg-gray: #eeeeee;
       /* --color-bg-gray: #e8e8e8; */
@@ -186,11 +186,10 @@ ul {
 .about,
 .skills {
   background: var(--color-bg-gray);
-  border-top:2px solid var(--color-bg)
+  border-top:2px solid var(--color-bg);
+    border-bottom:2px solid var(--color-bg)
 }
-   .works,.contact{
-    background: var(--color-bg)
-   }
+
 
 .about__inner,
 .works__inner,
@@ -243,7 +242,7 @@ ul {
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.6;
-  letter-spacing: 1.2;
+  letter-spacing: 0.1rem;
   color: var(--color-primary);
   margin-bottom: 1.5rem;
 
@@ -257,6 +256,7 @@ ul {
 /* ============
    About レイアウト（動画小窓）
    ============ */
+
 .about__body {
   display: flex;
   align-items: flex-start;
@@ -316,6 +316,9 @@ ul {
 /* ============
    Works
    ============ */
+   .works{
+    background: var(--color-bg)
+   }
 
 .works__list {
   display: grid;
@@ -449,7 +452,9 @@ ul {
 /* ============
    Contact
    ============ */
-
+   .contact{
+    background: var(--color-bg-opacity)
+   }
 .contact__text {
   font-size: 1rem;
   color: var(--color-text-light);
@@ -720,11 +725,11 @@ ul {
   position: fixed;
   inset: 0;
   z-index: 200;
-  align-items: center;
-  justify-content: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+        align-items: center;
+  justify-content: center;
 }
 
 .lightbox.is-open {
@@ -735,14 +740,15 @@ ul {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
+  display: block;
 }
 
 .lightbox__content {
   /* position: relative; */
   z-index: 1;
-  max-width: 90vw;
-  max-height: 90vh;
-  width: 100%;
+  /* max-width: 90vw;
+  max-height: 90vh; */
+  /* width: 100%; */
 }
 
 .lightbox__close {
