@@ -12,7 +12,7 @@ z-index:1;
   --color-bg: #ffffff;
   --color-bg-opacity: rgba(255, 255, 255, .4);
   /* --color-bg-gray: #e3e3e3; */
-    --color-bg-gray: #eeeeee;
+    --color-bg-gray: #f4f4f4;
       /* --color-bg-gray: #e8e8e8; */
   --color-text: #333333;
   --color-text-light: #777777;
@@ -496,6 +496,10 @@ ul {
   outline: none;
   border-color: var(--color-primary);
 }
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder{
+color:darkgray;
+}
 
 .contact-form__textarea {
   height: 160px;
@@ -740,7 +744,6 @@ ul {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  display: block;
 }
 
 .lightbox__content {
